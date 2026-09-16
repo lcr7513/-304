@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Hide scrollbar for clean horizontal chapter bar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* High fidelity Print stylesheet for PDF export */
+@media print {
+  /* Hide all interactive UI toolbars, floating buttons, and modals */
+  header,
+  nav,
+  button,
+  .no-print,
+  #reading-toolbar-header,
+  #btn-prev-page,
+  #btn-next-page,
+  .recharts-tooltip-wrapper {
+    display: none !important;
+  }
+
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .print-container {
+    width: 100% !important;
+  }
+
+  .print-page-break {
+    page-break-after: always;
+    break-after: page;
+    break-inside: avoid;
+  }
+}
