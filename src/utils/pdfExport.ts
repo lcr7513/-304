@@ -35,6 +35,7 @@ export async function exportElementToPdf(
       quality: 0.95,
       pixelRatio: 2, // High DPI
       backgroundColor: '#ffffff',
+      fontEmbedCSS: '',
     });
 
     const pdf = new jsPDF({
@@ -127,6 +128,7 @@ export async function exportFullBookToPdf(
         quality: 0.95,
         pixelRatio: 2,
         backgroundColor: '#ffffff',
+      fontEmbedCSS: '',
       });
 
       const imgWidth = pageEl.offsetWidth * 2;
